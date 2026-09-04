@@ -574,4 +574,21 @@
             
             document.querySelectorAll('.phone-slot-1').forEach(function(el) {
                 el.href = 'tel:' + tel1;
-                // Если ссылка внутри подвала, убираем зн
+                // Если ссылка внутри подвала, убираем значок трубки
+                el.textContent = el.closest('footer') ? text1.replace('📞 ', '') : text1;
+            });
+
+            // Второй номер: +7 (909) 970-26-36
+            const n2 = ['+7', '909', '970', '26', '36'];
+            const tel2 = n2.join('');
+            const text2 = '📞 ' + n2[0] + ' (' + n2[1] + ') ' + n2[2] + '-' + n2[3] + '-' + n2[4];
+
+            document.querySelectorAll('.phone-slot-2').forEach(function(el) {
+                el.href = 'tel:' + tel2;
+                el.textContent = el.closest('footer') ? text2.replace('📞 ', '') : text2;
+            });
+        });
+    </script>
+
+</body>
+</html>
