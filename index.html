@@ -7,6 +7,25 @@
     <meta name="yandex-verification" content="cc1299ab9d644f2d" />
     
     <title>Прокладка и Монтаж ВОЛС | Сварка и Измерения</title>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=112293713", "ym");
+
+        ym(112293713, "init", {
+            ssr: true,
+            webvisor: true,
+            clickmap: true,
+            ecommerce: "dataLayer"
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/112293713" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -519,17 +538,9 @@
                 </script>
 
                 <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit()">
-                    
-                    <!-- Ваш уникальный ключ Web3Forms -->
                     <input type="hidden" name="access_key" value="11d0c8a7-f50d-42b6-821f-fca8935217ab">
-                    
-                    <!-- Принудительный возврат на сайт -->
                     <input type="hidden" name="redirect" value="https://tirec.ru/">
-                    
-                    <!-- Тема письма -->
                     <input type="hidden" name="subject" value="Новая заявка с сайта ВОЛС!">
-                    
-                    <!-- Скрытая защита от спама -->
                     <input type="checkbox" name="botcheck" style="display: none;">
 
                     <div class="form-group">
@@ -574,7 +585,6 @@
             
             document.querySelectorAll('.phone-slot-1').forEach(function(el) {
                 el.href = 'tel:' + tel1;
-                // Если ссылка внутри подвала, убираем значок трубки
                 el.textContent = el.closest('footer') ? text1.replace('📞 ', '') : text1;
             });
 
