@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Тег подтверждения прав для Яндекс Вебмастера -->
+    <meta name="yandex-verification" content="cc1299ab9d644f2d" />
+    
+    <title>Прокладка и Монтаж ВОЛС | Сварка и Измерения</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --primary-dark: #0f172a;
+            --btn-blue: #2563eb;
+            --btn-blue-hover: #1d4ed8;
+            --accent-green: #10b981;
+            --accent-green-hover: #059669;
+            --whatsapp-color: #25D366;
+            --whatsapp-hover: #20ba5a;
+            --max-color: #7c3aed;
+            --max-hover: #6d28d9;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --danger: #ef4444;
+            --price-bg: #eff6ff;
+            --price-text: #1d4ed8;
+            --price-border: #bfdbfe;
+        }
+ 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
+ 
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+ 
+        .navbar {
+            background-color: #1e293b;
+            padding: 12px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+ 
+        .navbar-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+ 
+        .navbar-logo {
+            color: white;
+            font-weight: 800;
+            font-size: 1.25rem;
+            text-decoration: none;
+        }
+ 
+        .navbar-logo span {
+            color: #a855f7;
+        }
+ 
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+ 
+        .navbar-menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+ 
+        .navbar-menu a:hover {
+            color: white;
+            background-color: rgba(168, 85, 247, 0.25);
+            box-shadow: inset 0 0 0 1px rgba(168, 85, 247, 0.4);
+        }
+
+        .navbar-menu .nav-phone {
+            background-color: var(--accent-green);
+            color: white;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+            margin-left: 5px;
+        }
+
+        .navbar-menu .nav-phone:hover {
+            background-color: var(--accent-green-hover);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.6);
+        }
+
+        .navbar-menu .nav-whatsapp {
+            background-color: var(--whatsapp-color);
+            color: white;
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
+            margin-left: 5px;
+        }
+
+        .navbar-menu .nav-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+        }
+
+        .navbar-menu .nav-max {
+            background-color: var(--max-color);
+            color: white;
+            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+            margin-left: 5px;
+        }
+
+        .navbar-menu .nav-max:hover {
+            background-color: var(--max-hover);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.6);
+        }
+ 
+        header {
+            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 35%, #7c3aed 70%, #6d28d9 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3), inset 0 -4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+ 
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            text-shadow: 3px 3px 0px #1e1b4b, 6px 6px 15px rgba(0, 0, 0, 0.5);
+        }
+ 
+        header p {
+            font-size: 1.15rem;
+            color: #f1f5f9;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+ 
+        .container {
+            max-width: 1050px;
+            margin: 35px auto;
+            padding: 0 15px;
+        }
+ 
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 45px;
+        }
+ 
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.15), 0 6px 15px -3px rgba(15, 23, 42, 0.06);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e2e8f0;
+        }
+ 
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 40px -5px rgba(15, 23, 42, 0.25), 0 12px 25px -5px rgba(15, 23, 42, 0.15);
+        }
+ 
+        .card-image-wrapper {
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+            position: relative;
+            background-color: #0f172a;
+        }
+ 
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            opacity: 0.9;
+        }
+ 
+        .service-card:hover .card-image {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+ 
+        .badge-danger {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: var(--danger);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+ 
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+ 
+        .card-content h3 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+ 
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+ 
+        .card-content ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+ 
+        .card-content ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+ 
+        .card-content ul li::before {
+            content: "✓";
+            color: var(--btn-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+ 
+        .card-price-tag {
+            background-color: var(--price-bg);
+            border: 1px dashed var(--price-border);
+            color: var(--price-text);
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.08);
+        }
+ 
+        .contact-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 20px 40px -10px rgba(15,23,42,0.18);
+            border: 1px solid #e2e8f0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+ 
+        @media (max-width: 850px) {
+            .contact-section { grid-template-columns: 1fr; padding: 20px; }
+            header h1 { font-size: 2rem; }
+            .navbar-menu { justify-content: center; }
+        }
+ 
+        .contact-info h2 {
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+ 
+        .contact-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+ 
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .btn-green {
+            background: var(--accent-green);
+            color: white;
+            border-color: var(--accent-green-hover);
+        }
+        .btn-green:hover { background: var(--accent-green-hover); }
+
+        .btn-whatsapp {
+            background: var(--whatsapp-color);
+            color: white;
+            border-color: var(--whatsapp-hover);
+        }
+        .btn-whatsapp:hover { background: var(--whatsapp-hover); }
+
+        .btn-max {
+            background: var(--max-color);
+            color: white;
+            border-color: var(--max-hover);
+        }
+        .btn-max:hover { background: var(--max-hover); }
+
+        .btn-gray {
+            background: #f1f5f9;
+            color: var(--btn-blue);
+            border-color: #cbd5e1;
+        }
+        .btn-gray:hover { background: #e2e8f0; }
+ 
+        .form-group {
+            margin-bottom: 15px;
+        }
+ 
+        .form-group label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+ 
+        .form-control {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s;
+        }
+ 
+        .form-control:focus {
+            border-color: var(--btn-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+ 
+        .btn-submit {
+            background-color: var(--btn-blue);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+        }
+ 
+        .btn-submit:hover { background-color: var(--btn-blue-hover); }
+        .btn-submit:active { transform: scale(0.98); }
+ 
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 45px;
+            background-color: #1e293b;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+ 
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">ВОЛС-<span>Сервис</span></a>
+            <ul class="navbar-menu">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="mailto:ryhov1@gmail.com">Написать нам</a></li>
+                <li><a href="https://max.ru/u/f9LHodD0cOK65tA72TdGuE6R26BjQbN6JDccRU0T8uc3fxOrDq_qn-tHAKI" target="_blank" class="nav-max">MAX</a></li>
+                <li><a href="https://wa.me/79099702636?text=Здравствуйте!%20Интересует%20сварка%20и%20монтаж%20ВОЛС" target="_blank" class="nav-whatsapp">💬 WhatsApp</a></li>
+                <li><a href="tel:+79031952114" class="nav-phone">📞 +7 (903) 195-21-14</a></li>
+                <li><a href="tel:+79099702636" class="nav-phone">📞 +7 (909) 970-26-36</a></li>
+            </ul>
+        </div>
+    </nav>
+ 
+    <header>
+        <h1>Прокладка и Монтаж ВОЛС</h1>
+        <p>Строительство надежных линий связи и экстренное восстановление оптических кабелей</p>
+    </header>
+ 
+    <div class="container" id="services">
+ 
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="card-image-wrapper">
+                    <img src="kabel.png" alt="Магистральный оптический кабель" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h3>Прокладка ВОЛС</h3>
+                    <p>Качественное построение оптической инфраструктуры под ключ:</p>
+                    <ul>
+                        <li>Протяжка в кабельной канализации и грунте</li>
+                        <li>Надежный подвес на опорах</li>
+                        <li>Монтаж кабельных трасс внутри зданий и ЦОД</li>
+                        <li>Входной контроль строительных длин</li>
+                    </ul>
+                    <div class="card-price-tag">
+                        <span>Кабельные работы: цена договорная</span>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="service-card">
+                <div class="card-image-wrapper">
+                    <img src="svarka.png" alt="Сварка оптических волокон в кассете" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h3>Прецизионная сварка и измерения</h3>
+                    <p>Профессиональные соединения и диагностика линий:</p>
+                    <ul>
+                        <li>Сварка японским аппаратом Fujikura</li>
+                        <li>Измерения оптическим рефлектометром с поверкой</li>
+                        <li>Сборка и монтаж оптических кроссов (ШКОН, ШКОС)</li>
+                        <li>Разварка магистральных и тупиковых муфт</li>
+                    </ul>
+                    <div class="card-price-tag">
+                        <strong>⚡ Сварка волокна: от 350 ₽</strong>
+                        <strong>📊 Рефлектометр: 200 ₽ / волокно</strong>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="service-card">
+                <div class="card-image-wrapper">
+                    <span class="badge-danger">Выезд 24/7</span>
+                    <img src="remont.png" alt="Повреждение оптических модулей кабеля" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h3>Устранение аварий</h3>
+                    <p>Оперативное восстановление связи при обрывах и затуханиях:</p>
+                    <ul>
+                        <li>Аварии в телефонной канализации — цена договорная</li>
+                        <li>Обрывы по оптике в грунте — цена договорная</li>
+                        <li>Аварии в квартирах (дроп-кабель GPON) — 5 000 ₽ выезд</li>
+                    </ul>
+                    <div class="card-price-tag">
+                        <strong>🚨 Квартиры (GPON): 5 000 ₽ (выезд)</strong>
+                        <strong>🌐 Канализация / Грунт: договорная</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="contact-section" id="contacts">
+            <div class="contact-info">
+                <h2>Свяжитесь с нами</h2>
+                <p>Нужен профессиональный монтаж, проведение плановых измерений поверенным рефлектометром или требуется срочно устранить аварию на линии? Звоните или пишите.</p>
+                
+                <div class="contact-buttons">
+                    <a href="tel:+79031952114" class="contact-btn btn-green">📞 +7 (903) 195-21-14</a>
+                    <a href="tel:+79099702636" class="contact-btn btn-green">📞 +7 (909) 970-26-36</a>
+                    <a href="https://max.ru/u/f9LHodD0cOK65tA72TdGuE6R26BjQbN6JDccRU0T8uc3fxOrDq_qn-tHAKI" target="_blank" class="contact-btn btn-max">💬 Написать в MAX</a>
+                    <a href="https://wa.me/79099702636?text=Здравствуйте!%20Интересует%20сварка%20и%20монтаж%20ВОЛС" target="_blank" class="contact-btn btn-whatsapp">💬 Написать в WhatsApp</a>
+                    <a href="mailto:ryhov1@gmail.com" class="contact-btn btn-gray">✉ ryhov1@gmail.com</a>
+                </div>
+            </div>
+ 
+            <div>
+                <script>
+                    function handleSubmit() {
+                        const btn = document.getElementById('submitBtn');
+                        btn.innerText = 'Отправка...';
+                    }
+                </script>
+
+                <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit()">
+                    
+                    <!-- Ваш уникальный ключ Web3Forms -->
+                    <input type="hidden" name="access_key" value="11d0c8a7-f50d-42b6-821f-fca8935217ab">
+                    
+                    <!-- Принудительный возврат на сайт -->
+                    <input type="hidden" name="redirect" value="https://tirec.ru/">
+                    
+                    <!-- Тема письма -->
+                    <input type="hidden" name="subject" value="Новая заявка с сайта ВОЛС!">
+                    
+                    <!-- Скрытая защита от спама -->
+                    <input type="checkbox" name="botcheck" style="display: none;">
+
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" name="Имя" class="form-control" placeholder="Александр" required>
+                    </div>
+ 
+                    <div class="form-group">
+                        <label for="phoneEmail">Контактный телефон или Email</label>
+                        <input type="text" id="phoneEmail" name="Контакты" class="form-control" placeholder="+7 (...) или почта" required>
+                    </div>
+ 
+                    <div class="form-group">
+                        <label for="msg">Описание задачи / Объект</label>
+                        <textarea id="msg" name="Задача" class="form-control" rows="3" placeholder="Например: Требуется выезд для сварки кросса..."></textarea>
+                    </div>
+ 
+                    <button type="submit" id="submitBtn" class="btn-submit">Отправить техзадание</button>
+                </form>
+            </div>
+        </div>
+ 
+    </div>
+ 
+    <footer>
+        <p>© 2026 Прокладка и Монтаж ВОЛС. Все права защищены.</p>
+        <p style="margin-top: 8px; font-size: 0.9rem;">
+            Телефоны: 
+            <a href="tel:+79031952114" style="color: #a855f7; text-decoration: none; font-weight: bold;">+7 (903) 195-21-14</a>, 
+            <a href="tel:+79099702636" style="color: #a855f7; text-decoration: none; font-weight: bold;">+7 (909) 970-26-36</a> | 
+            Email: <a href="mailto:ryhov1@gmail.com" style="color: #a855f7; text-decoration: none; font-weight: bold;">ryhov1@gmail.com</a>
+        </p>
+    </footer>
+
+</body>
+</html>
