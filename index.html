@@ -41,7 +41,6 @@
       "image": "https://tirec.ru/svarka.png",
       "description": "Профессиональная сварка оптических волокон аппаратом Fujikura, рефлектометрия линий связи и экстренное устранение аварий ВОЛС 24/7.",
       "telephone": ["+79031952114", "+79099702636"],
-      "email": "ryhov1@gmail.com",
       "priceRange": "от 350 руб.",
       "areaServed": {
         "@type": "AdministrativeArea",
@@ -488,7 +487,7 @@
             <a href="#" class="navbar-logo">TIREC <span>ВОЛС</span></a>
             <ul class="navbar-menu">
                 <li><a href="#services">Услуги</a></li>
-                <li><a href="mailto:ryhov1@gmail.com">Написать нам</a></li>
+                <li><a href="#" class="mail-slot">Написать нам</a></li>
                 <li><a href="https://max.ru/u/f9LHodD0cOK65tA72TdGuE6R26BjQbN6JDccRU0T8uc3fxOrDq_qn-tHAKI" target="_blank" class="nav-max">MAX</a></li>
                 <li><a href="https://wa.me/79099702636?text=Здравствуйте!%20Интересует%20сварка%20и%20монтаж%20ВОЛС" target="_blank" class="nav-whatsapp">💬 WhatsApp</a></li>
                 <li><a href="#" class="nav-phone phone-slot-1"></a></li>
@@ -503,7 +502,6 @@
     </header>
 
     <div class="container" id="services">
-
         <div class="services-grid">
             <div class="service-card">
                 <div class="card-image-wrapper">
@@ -575,7 +573,7 @@
                     <a href="#" class="contact-btn btn-green phone-slot-2"></a>
                     <a href="https://max.ru/u/f9LHodD0cOK65tA72TdGuE6R26BjQbN6JDccRU0T8uc3fxOrDq_qn-tHAKI" target="_blank" class="contact-btn btn-max">💬 Написать в MAX</a>
                     <a href="https://wa.me/79099702636?text=Здравствуйте!%20Интересует%20сварка%20и%20монтаж%20ВОЛС" target="_blank" class="contact-btn btn-whatsapp">💬 Написать в WhatsApp</a>
-                    <a href="mailto:ryhov1@gmail.com" class="contact-btn btn-gray">✉ ryhov1@gmail.com</a>
+                    <a href="#" class="contact-btn btn-gray mail-slot"></a>
                 </div>
             </div>
 
@@ -612,7 +610,6 @@
                 </form>
             </div>
         </div>
-
     </div>
 
     <footer>
@@ -621,14 +618,14 @@
             Телефоны: 
             <a href="#" class="phone-slot-1" style="color: #a855f7; text-decoration: none; font-weight: bold;"></a>, 
             <a href="#" class="phone-slot-2" style="color: #a855f7; text-decoration: none; font-weight: bold;"></a> | 
-            Email: <a href="mailto:ryhov1@gmail.com" style="color: #a855f7; text-decoration: none; font-weight: bold;">ryhov1@gmail.com</a>
+            Email: <a href="#" class="mail-slot" style="color: #a855f7; text-decoration: none; font-weight: bold;"></a>
         </p>
     </footer>
 
-    <!-- Скрипт защиты номеров -->
+    <!-- Скрипт защиты номеров и email от ботов -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Номер 1: +7 (903) 195-21-14
+            // Защита Номера 1
             const n1 = ['+7', '903', '195', '21', '14'];
             const tel1 = n1.join('');
             const text1 = '📞 ' + n1[0] + ' (' + n1[1] + ') ' + n1[2] + '-' + n1[3] + '-' + n1[4];
@@ -638,7 +635,7 @@
                 el.textContent = el.closest('footer') ? text1.replace('📞 ', '') : text1;
             });
 
-            // Номер 2: +7 (909) 970-26-36
+            // Защита Номера 2
             const n2 = ['+7', '909', '970', '26', '36'];
             const tel2 = n2.join('');
             const text2 = '📞 ' + n2[0] + ' (' + n2[1] + ') ' + n2[2] + '-' + n2[3] + '-' + n2[4];
@@ -647,8 +644,21 @@
                 el.href = 'tel:' + tel2;
                 el.textContent = el.closest('footer') ? text2.replace('📞 ', '') : text2;
             });
+
+            // Защита Email (собирается скриптом только для живых пользователей)
+            const mUser = 'ryhov1';
+            const mDomain = 'gmail.com';
+            const mailFull = mUser + '@' + mDomain;
+
+            document.querySelectorAll('.mail-slot').forEach(function(el) {
+                el.href = 'mailto:' + mailFull;
+                if (el.classList.contains('btn-gray')) {
+                    el.textContent = '✉ ' + mailFull;
+                } else if (el.closest('footer')) {
+                    el.textContent = mailFull;
+                }
+            });
         });
     </script>
-
 </body>
 </html>
