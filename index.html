@@ -348,6 +348,138 @@
             box-shadow: 0 2px 6px rgba(37, 99, 235, 0.08);
         }
 
+        /* Блоки описания для юрлиц и FAQ в едином стиле сайта */
+        .info-block {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 45px;
+            box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.15), 0 6px 15px -3px rgba(15, 23, 42, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-block h2 {
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 14px;
+            font-weight: 800;
+        }
+
+        .info-block > p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .b2b-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .b2b-item {
+            background-color: var(--bg-color);
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 18px;
+        }
+
+        .b2b-item h3 {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .b2b-item p {
+            color: var(--text-main);
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+        }
+
+        .b2b-item ul {
+            list-style: none;
+        }
+
+        .b2b-item ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        .b2b-item ul li::before {
+            content: "✓";
+            color: var(--btn-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background-color: var(--bg-color);
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            padding: 15px 20px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary:hover {
+            background-color: #f1f5f9;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.3rem;
+            color: var(--btn-blue);
+            font-weight: 800;
+            margin-left: 12px;
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-item[open] summary {
+            border-bottom: 1px solid #e2e8f0;
+            background-color: var(--price-bg);
+            color: var(--price-text);
+        }
+
+        .faq-answer {
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            color: var(--text-main);
+            background-color: var(--card-bg);
+            line-height: 1.6;
+        }
+
         .contact-section {
             background: var(--card-bg);
             border-radius: 12px;
@@ -361,7 +493,7 @@
         }
 
         @media (max-width: 850px) {
-            .contact-section { grid-template-columns: 1fr; padding: 20px; }
+            .contact-section, .info-block { grid-template-columns: 1fr; padding: 20px; }
             header h1 { font-size: 2rem; }
             .navbar-menu { justify-content: center; }
         }
@@ -487,6 +619,8 @@
             <a href="#" class="navbar-logo">TIREC <span>ВОЛС</span></a>
             <ul class="navbar-menu">
                 <li><a href="#services">Услуги</a></li>
+                <li><a href="#b2b">Юрлицам</a></li>
+                <li><a href="#faq">Вопросы</a></li>
                 <li><a href="#" class="mail-slot">Написать нам</a></li>
                 <li><a href="https://max.ru/u/f9LHodD0cOK65tA72TdGuE6R26BjQbN6JDccRU0T8uc3fxOrDq_qn-tHAKI" target="_blank" class="nav-max">MAX</a></li>
                 <li><a href="https://wa.me/79099702636?text=Здравствуйте!%20Интересует%20сварка%20и%20монтаж%20ВОЛС" target="_blank" class="nav-whatsapp">💬 WhatsApp</a></li>
@@ -560,6 +694,97 @@
                         <strong>🌐 Канализация / Грунт: договорная</strong>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Блок для юридических лиц и описания работы по Москве и МО -->
+        <div class="info-block" id="b2b">
+            <h2>Сотрудничество с юридическими лицами в Москве и Московской области</h2>
+            <p>Выполняем полный цикл монтажных, сварочных и аварийно-восстановительных работ на волоконно-оптических линиях связи (ВОЛС) по всей территории Москвы и Московской области. Сотрудничаем с операторами связи, интернет-провайдерами, системными интеграторами, дата-центрами (ЦОД), управляющими компаниями, складскими комплексами и промышленными предприятиями.</p>
+            
+            <div class="b2b-grid">
+                <div class="b2b-item">
+                    <h3>Договор и расчетный счет</h3>
+                    <p>Официальное оформление работ для корпоративных заказчиков и подрядных организаций:</p>
+                    <ul>
+                        <li>Оплата по безналичному расчету на р/с</li>
+                        <li>Оперативный обмен документами через ЭДО (Диадок, СБИС)</li>
+                        <li>Предоставление закрывающих актов, счетов и смет (КС-2, КС-3)</li>
+                        <li>Разовые выезды и договоры на абонентское обслуживание (SLA)</li>
+                    </ul>
+                </div>
+
+                <div class="b2b-item">
+                    <h3>Исполнительная документация</h3>
+                    <p>Подготовка технического пакета документов для сдачи линии заказчику или технадзору:</p>
+                    <ul>
+                        <li>Рефлектограммы в форматах SOR и PDF на каждое волокно</li>
+                        <li>Действующее свидетельство о поверке на оптический рефлектометр</li>
+                        <li>Протоколы измерения затуханий и паспорта трасс</li>
+                        <li>Схемы разварки оптических муфт и кроссового оборудования</li>
+                    </ul>
+                </div>
+
+                <div class="b2b-item">
+                    <h3>Выезд по Москве и МО</h3>
+                    <p>Мобильные бригады укомплектованы профессиональным инструментом для автономной работы:</p>
+                    <ul>
+                        <li>Работаем во всех округах Москвы и городах Подмосковья</li>
+                        <li>Японские сварочные аппараты Fujikura с юстировкой по сердцевине</li>
+                        <li>Наличие расходников (муфты, кроссы, пигтейлы, КДЗС, патч-корды)</li>
+                        <li>Аварийные и ночные выезды для минимизации простоя бизнеса</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок ответов на частые вопросы (FAQ) -->
+        <div class="info-block" id="faq">
+            <h2>Ответы на частые вопросы (FAQ)</h2>
+            <p>Подробная информация о порядке выполнения сварочных работ, измерениях ВОЛС, устранении обрывов и условиях выезда по Москве и области.</p>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>В каких районах Москвы и Московской области вы работаете?</summary>
+                    <div class="faq-answer">
+                        Мы выезжаем во все районы Москвы (включая Новую Москву, ТиНАО и Зеленоград), а также по всей территории Московской области: Химки, Мытищи, Королёв, Балашиха, Люберцы, Реутов, Домодедово, Подольск, Видное, Одинцово, Красногорск, Истра, Солнечногорск, Дмитров, Сергиев Посад, Пушкино, Щёлково, Ногинск, Электросталь, Раменское, Чехов, Серпухов и другие населенные пункты МО.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Как происходит работа с юридическими лицами?</summary>
+                    <div class="faq-answer">
+                        Для начала работы достаточно прислать техническое задание и реквизиты вашей компании в мессенджер, на почту или через форму на сайте. Мы оперативно согласуем стоимость, выставим счет и подготовим договор. По завершении монтажа или измерений передаем полный комплект закрывающих документов (акты выполненных работ, УПД) по ЭДО или в оригинале вместе с протоколами рефлектометрии.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Каким оборудованием выполняется сварка и тестирование оптики?</summary>
+                    <div class="faq-answer">
+                        Сварка оптических волокон (одномодовых SM G.652D, G.657A и многомодовых MM OM2/OM3/OM4) производится японскими сварочными аппаратами Fujikura с выравниванием по сердцевине волокна, что гарантирует минимальные потери на сварном стыке (в среднем 0.01–0.03 дБ). Контроль качества линии, поиск обрывов и макроизгибов выполняются оптическим рефлектометром (OTDR) с актуальным свидетельством о государственной поверке.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Из чего складывается стоимость сварки ВОЛС и есть ли минимальный заказ?</summary>
+                    <div class="faq-answer">
+                        Базовая стоимость сварки начинается от 350 ₽ за волокно, рефлектометрических измерений — 200 ₽ за волокно. Итоговая цена зависит от общего количества сварок на объекте, типа монтируемого оборудования (стоечные или настенные кроссы ШКОС/ШКОН, магистральные или тупиковые муфты), условий доступа (высотные работы, колодцы ККС, серверные, улица) и удаленности объекта от МКАД. Чем больше объем волокон — тем ниже стоимость за одну точку сварки.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Предоставляете ли вы расходные материалы (кроссы, муфты, пигтейлы)?</summary>
+                    <div class="faq-answer">
+                        Да, мы можем работать как с материалами заказчика, так и полностью укомплектовать объект собственными расходниками под ключ: оптическими муфтами (МТОК и аналогами), кроссами (SC/LC/FC/ST, полировка UPC/APC), пигтейлами, проходными адаптерами, гильзами КДЗС, сплайс-кассетами и оптическим кабелем нужной емкости.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Как быстро вы выезжаете на устранение аварии или обрыва кабеля?</summary>
+                    <div class="faq-answer">
+                        Дежурная бригада готова к выезду круглосуточно (24/7). При обрыве магистрального кабеля на предприятии, строительной площадке, в кабельной канализации или при повреждении абонентского дроп-кабеля GPON в квартире/частном доме специалист выезжает на место сразу после согласования заявки, локализует место повреждения рефлектометром и восстанавливает линию связи.
+                    </div>
+                </details>
             </div>
         </div>
 
